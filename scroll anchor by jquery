@@ -1,0 +1,128 @@
+<script type="text/javascript">
+
+    jQuery(function() {
+
+        jQuery('#page-menu-wrap a[href*=#]:not([href=#])').click(function() {
+
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = jQuery(this.hash);
+
+                target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
+
+                if (target.length) {
+
+                	if (jQuery(window).width() >= 991) {
+
+	                    if (jQuery('#header').hasClass('sticky-header')) {
+
+	                        jQuery('html,body').animate({
+
+	                            scrollTop: target.offset().top - 100
+
+	                        }, 1000);
+
+	                        return false;
+
+	                    } else {
+
+	                        jQuery('html,body').animate({
+
+	                            scrollTop: target.offset().top - 130
+
+	                        }, 1000);
+
+
+
+	                        return false;
+
+	                    }
+
+	                }else{
+
+	                	jQuery('html,body').animate({
+
+	                            scrollTop: target.offset().top
+
+	                        }, 1000);
+
+
+
+	                        return false;
+
+	                }
+
+
+
+                }
+
+
+
+            }
+
+
+
+        });
+
+    });
+
+</script>
+// windown.location.hash jquery
+
+<script type="text/javascript">
+
+	  jQuery(function() {
+
+
+
+        if (window.location.hash) {
+
+        	if (jQuery(window).width() >= 991) {
+
+            //Executed on page load with URL containing an anchor tag.
+
+	            if (jQuery(location.href.split("#")[1])) {
+
+	                var target = jQuery('#' + location.href.split("#")[1]);
+
+	                if (target.length) {
+
+	                    jQuery('html,body').animate({
+
+	                        scrollTop: target.offset().top - 140 //offset height of header here too.
+
+	                    }, 1000);
+
+	                    return false;
+
+	                }
+
+	            }
+
+	        }else{
+
+	        	 if (jQuery(location.href.split("#")[1])) {
+
+	                var target = jQuery('#' + location.href.split("#")[1]);
+
+	                if (target.length) {
+
+	                    jQuery('html,body').animate({
+
+	                        scrollTop: target.offset().top //offset height of header here too.
+
+	                    }, 1000);
+
+	                    return false;
+
+	                }
+
+	            }
+
+	        }
+
+        }
+
+    });
+
+</script>
